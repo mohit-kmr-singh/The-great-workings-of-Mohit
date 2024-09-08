@@ -1,0 +1,78 @@
+/*
+"Hello world wassup!
+
+I created a number guessing game where you have 3 chances to guess
+a randomly generated number. The game provides hints if your guess
+is too high or too low. Win and you could score some great prizes!
+ 🎁 Give it a try and let me know what you think! 😄
+*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+    // Seed the random number generator with the current time
+    srand(time(0));
+
+    // Generate a random number between 1 and 100
+    int randomNumber = (rand() % 10) + 1;
+
+    // Print the random number
+    //printf("Random number: %d\n", randomNumber);  OPTIONAL for hint
+
+    int number, number_of_guesses = 0;
+    printf("Hey user! Please enter your lucky number:\n");
+
+    do
+    {
+        scanf("%d", &number);
+        number_of_guesses++;
+
+        if (number > randomNumber)
+        {
+            printf("Lower number please\n");
+
+            if (number_of_guesses == 3)
+            {
+                printf("Alas! Your chances are over");
+                break;
+            }
+        }
+
+        else if (number < randomNumber)
+        {
+            printf("Higher number please\n");
+
+            if (number_of_guesses == 3)
+            {
+                printf("Alas! Your chances are over");
+                break;
+            }
+        }
+
+        else if (number == randomNumber)
+        {
+            printf("Kudos! you won the game\n");
+            printf("You took %d guesses to win the game\n", number_of_guesses);
+
+            if (number_of_guesses == 1)
+            {
+                printf("You won a premium trip to Dholakpur.\n");
+            }
+
+            else if (number_of_guesses == 2)
+            {
+                printf("You won a 0 inches LG Television!\n");
+            }
+
+            else if (number_of_guesses == 3)
+            {
+                printf("You won a pogo membership\n");
+            }
+        }
+
+    } while (number != randomNumber);
+
+    return 0;
+}
