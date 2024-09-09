@@ -2,7 +2,7 @@
 "Hello world wassup!
 
 I created a number guessing game where you have 3 chances to guess
-a randomly generated number. The game provides hints if your guess
+a randomly generated number between 1 to 10. The game provides hints if your guess
 is too high or too low. Win and you could score some great prizes!
  🎁 Give it a try and let me know what you think! 😄
 */
