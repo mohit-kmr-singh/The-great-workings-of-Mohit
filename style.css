@@ -1,0 +1,131 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.04), transparent 55%),
+        radial-gradient(circle at 100% 0%, rgba(255, 255, 255, 0.04), transparent 55%),
+        linear-gradient(135deg,
+          #5e2408 0%,
+          #422208 30%,
+          #753007 60%,
+          #964100 100%
+        );
+      color: #fff;
+    }
+
+    .champions {
+      padding: 80px 6%;
+      text-align: center;
+    }
+
+    .section-tag {
+      color: #ff9800;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-size: 3rem;
+      margin: 15px 0;
+    }
+
+    .section-title span {
+      color: #ff9800;
+    }
+
+    .section-desc {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .cards {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      width: 320px;
+      height: 420px;
+      perspective: 1200px;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transform-style: preserve-3d;
+      transform-origin: center;
+      will-change: transform;
+    }
+
+    /* Unfold effect */
+    .card:hover .card-inner {
+      transform: rotateX(20deg) rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(252, 251, 249, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; /* center content vertically */
+      padding: 20px;
+    }
+
+    /* Front side adjustments */
+    .card-front img {
+      width: 140px;
+      height: 140px; /* square photo */
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 15px;
+      border: 3px solid #ff9800;
+    }
+
+    .card-front h3 {
+      font-size: 1.6rem;
+      margin: 0;
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+      will-change: transform;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-back h3 {
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+      color: #ff9800;
+    }
+
+    .card-back p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
